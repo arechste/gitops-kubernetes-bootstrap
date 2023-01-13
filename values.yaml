@@ -4,15 +4,17 @@ domain:
 ## Set local if you wish to use "local-path" in your cluster 
 storage:
   local:
-    enable: true
+    enable: false
 # Application specific
 githubactionsrunner:
   enable: false
   token: ""
 cats:
-  storageClass: "local-path"
+#  storageClass: "local-path"
+  storageClass: "default-storageclass"
 observability:
-  storageClass: "local-path"
+#  storageClass: "local-path"
+  storageClass: "default-storageclass"
   pdkey:
   storageSize: 10Gi
   retention: 5d
@@ -27,4 +29,4 @@ logging:
 metallb:
 # This only passes through to the bootstrap resources a single address pool, 
 # you can use a range if you you want to do something more complex
-  addresspool: 192.168.88.70/24
+  addresspool: 172.31.244.150-172.31.244.159
